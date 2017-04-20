@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+extern Boolean isUserLoggedIn;
+extern Boolean isAllowLandscope;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

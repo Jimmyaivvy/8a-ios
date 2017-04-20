@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+Boolean isUserLoggedIn;
+Boolean isAllowLandscope;
 
 @interface AppDelegate ()
 
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    isAllowLandscope = NO;
     return YES;
 }
 
@@ -47,5 +50,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+
+-(UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    
+    if (isAllowLandscope)
+        return UIInterfaceOrientationMaskLandscape;
+    else
+        return UIInterfaceOrientationMaskPortrait;
+}
 
 @end
